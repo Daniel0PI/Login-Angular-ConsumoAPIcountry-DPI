@@ -47,9 +47,10 @@ export class LoginComponent {
 
         if (user) {
           alert('Login exitoso');
-          // Redirigir a la página principal o hacer alguna acción
-          this.router.navigate(['/inicio']);
-          return;
+          // Almacenar el objeto del usuario en el localStorage
+          localStorage.setItem('currentUser', JSON.stringify(user));
+          // Redirigir a la página principal
+          this.router.navigate(['/inicio']);return;
         } else {
           alert('Usuario o contraseña incorrectos');
         }

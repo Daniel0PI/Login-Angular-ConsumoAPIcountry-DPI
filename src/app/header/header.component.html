@@ -2,11 +2,21 @@
     <button mat-icon-button>
       <mat-icon>menu</mat-icon>
     </button>
-    <span>JAEDAN Detailing</span>
+    <span class="title">PAISES </span>
     <span class="spacer"></span>
-    <button mat-button>Inicio</button>
-    <button mat-button>Carros</button>
-    <button mat-button>Alumons</button>
-    <button mat-button>Inventario</button>
+
+   
+ 
+    <div class="user-info" *ngIf="currentUser">
+      <img [src]="currentUser.avatar" alt="Foto de {{ currentUser.name }}" class="user-avatar">
+      <span class="user-name" (click)="toggleLogoutModal()">{{ currentUser.name }}</span>
+    </div>
     
+    <div id="logout-modal" class="modal" *ngIf="isLogoutModalVisible">
+      <div class="modal-content">
+        <p>¿Estás seguro de que deseas cerrar sesión?</p>
+        <button (click)="logout()">Cerrar sesión</button>
+        <button (click)="toggleLogoutModal()">Cancelar</button>
+      </div>
+    </div>
   </mat-toolbar>
