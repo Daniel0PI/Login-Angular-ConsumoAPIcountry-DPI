@@ -110,7 +110,10 @@ inicio.component.ts
  funcion para cerrar la ventana modal 
  ![image](https://github.com/user-attachments/assets/96f5c9ce-459d-42f5-8421-7b54b50ba0a5)
 inicio.component.ts
-## ## Visualizacion Datos Country 
+
+
+
+### Visualizacion Datos Country 
 tendremos la estructura del html de una tabla, con las columnas necesarias 
 ![image](https://github.com/user-attachments/assets/f3fd386f-91f1-4e98-8d40-b18d79d8805a)
 inicio.component.html 
@@ -126,8 +129,45 @@ Funcion para la busqueda
 ![image](https://github.com/user-attachments/assets/031faf21-b590-4b60-a105-c5c7e99b6834)
 ![image](https://github.com/user-attachments/assets/04dc632c-4360-4ebb-8190-f7b115c17f0b)
 
-   
 
+## Botones de interacción 
+ ![image](https://github.com/user-attachments/assets/15fbab74-5502-441e-bc9a-7d9b125e9c6a)
+
+- # Editar
+
+- manda a llamar la funcion de onEdit(element) para esto le pasamos el elemnto de la celda donde hicimos click 
+- - encontramos el index del elemento
+- - validamos si es mayor a 0
+- - seleccionamos la filas
+- - hacemos modificables las celdas
+- . mediante un listener podemos guardar los cambios y los guardamos en un value
+
+
+
+![image](https://github.com/user-attachments/assets/d358bc45-8811-44d1-bba4-16f85da318c9)
+-   # Guardar los cambios
+- para guardar los cambios necesitamos llamar al elemento modificado, encontramos su index que no fue modificado, todos los cambios son por medio del index en caso contrario de hacerlo por el nombre, si este se cambia, ya no haria referencia al pais correcto pues no existiria 
+- ![image](https://github.com/user-attachments/assets/d0da1e27-5ba3-4740-9b40-651acc59c062)
+
+
+-  # Eliminar
+buscamos el elemento mediante su index, si es mayor a 0 procedemos a eliminarlo con .splice, updateamos la tabla y actualizamos la paginación 
+  
+![image](https://github.com/user-attachments/assets/37f41e41-a262-4a5b-8d8f-7e5bc665e0d9)
+
+- # Mas info
+procedemos dependiendo del elemento seleccionado, mostraremos el modal con la funcion de modal visible 
+se mostrara dentro del modal un boton de cerrar que llamara a closeinfomodal, este cambiara la variable de visualización del modal
+  ![image](https://github.com/user-attachments/assets/732dcbf5-f2ba-4c1d-a005-4b39a332623b)
+
+
+
+## Paginación
+mostramos la estructura principal del paginator con los valores para modificar los elementos que queremos listar en una pagina 
+esto manda a llamar al meotodo onPageChange($event) que actualizara la visibilidad de los elementos
+![image](https://github.com/user-attachments/assets/3ab0e7a7-fb21-4c4f-a955-c4a049c00c13)
+conforme al index, y el valor que de el paginator al seleccionarlo se hara la consulta y listado de datos 
+![image](https://github.com/user-attachments/assets/831d72c9-6ecb-4215-9754-112c818c3a0f)
 
 
 # Login
